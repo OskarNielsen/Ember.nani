@@ -3,13 +3,11 @@
         <div class="span3">
           <table class='table'>
             <thead>
-              <tr><th>Recent Posts</th></tr>
+              <tr><th>Tidligere historier</th></tr>
             </thead>
             {{#each model}}
-            <tr><td>
-               
-                {{title}} <small class='muted'>af {{author.name}}</small>
-               
+            <tr><td>{{#link-to 'historien' this}}
+                {{title}} <small class='muted'>af {{author.name}}</small>{{/link-to}}
             </td></tr>
             {{/each}}
           </table>
@@ -19,4 +17,3 @@
         </div>
       </div>
     </div>
-    
