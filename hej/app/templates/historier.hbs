@@ -5,9 +5,9 @@
             <thead>
               <tr><th>Tidligere historier</th></tr>
             </thead>
-            {{#each model}}
+            {{#each}}
             <tr><td>{{#link-to 'historien' this}}
-                {{title}} <small class='muted'>af {{author.name}}</small>{{/link-to}}
+                {{title}} <small class='muted'>af {{author}}</small>{{/link-to}}
             </td></tr>
             {{/each}}
           </table>
