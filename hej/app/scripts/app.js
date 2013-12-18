@@ -9,44 +9,39 @@ require('scripts/routes/*');
 require('scripts/views/*');
 require('scripts/router');
 
-Ember.Handlebars.helper('format-date', function(date) {
-  return moment(date).fromNow();
+Hej.Story = DS.Model.extend({
+    url : DS.attr('string'),
+    tags : DS.attr('string'),
+    fullname : DS.attr('string'),
+    title : DS.attr('string'),
+    excerpt : DS.attr('string'),
+    submittedOn : DS.attr('date')
+ 
 });
 
-
-
-Hej.Kontakt.FIXTURES = [
-  { id: '1', 
-  	title: 'Hej ',
-  	date: new Date('12-9-2010'),
-   author: 'mememe' ,
-   excerpt: 'eee',
-    body: 'eeeee' },
-  { 
-  	id: '2', 
-  	title: 'Tom' ,
-  	date: new Date('12-9-2010'),
-   author: 'Dale' ,
-    excerpt: 'Ja, nu ved jeg nu ikke, nu bliver det ens' ,
-     body: 'Og nu skal jeg også skrive her?' 
+Hej.OpretkundeController = Ember.ObjectController.extend({
+ 
+ actions :{
+    save : function(){
+        var url = $('#url').val();
+        var tags = $('#tags').val();
+        var fullname = $('#fullname').val();
+        var title = $('#title').val();
+        var excerpt = $('#excerpt').val();
+        var submittedOn = new Date();
+        var store = this.get('store');
+        var story = store.createRecord('story',{
+            url : url,
+            tags : tags,
+            fullname : fullname,
+            title : title,
+            excerpt : excerpt,
+            submittedOn : submittedOn
+        });
+        story.save();
+        this.transitionToRoute('index');
+    }
  }
-];
-
-
-
-Hej.HistorienController = Ember.ObjectController.extend({
-	isEditing: false,
-
-	
-		edit: function() {
-			this.set('isEditing', true);
-		},
-		doneEditing: function() {
-			this.set('isEditing', false);
-			
-		}
-
 });
-
 
 
