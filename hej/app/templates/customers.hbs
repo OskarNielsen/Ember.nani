@@ -1,0 +1,43 @@
+<br><br><br>
+
+      
+    <div class="cl-xs-4">
+<div class="well">
+    
+    <small>Kunder</small><br>
+
+    
+    
+    <ul>
+      <small>Fornavn</small>
+    
+      <small>Efternavn</small>
+    </ul>
+  
+    {{#each model}}
+    {{#link-to 'customer' this}}
+    <tr>
+    <ul>{{name}}      {{lastname}}</ul>
+    </tr>
+    {{/link-to}} 
+    {{/each}}
+    
+    <br><br>
+    Tilføj en kunde <br>
+    {{view Ember.TextField class="new-comment" placeholder="Fornavn"
+                        valueBinding="name" }}
+    {{view Ember.TextField class="new-comment" placeholder="Fornavn"
+                        valueBinding="lastname" }}                        
+    
+
+
+    <button {{action 'create'}}>
+      Gem kunde
+    </button>
+
+
+    </ul>
+    
+  </div>
+</div>
+ 

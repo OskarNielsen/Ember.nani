@@ -1,0 +1,20 @@
+<small>Ordreliste
+<ol>	
+
+{{#each controllers.customer.orders}}
+
+<li>
+{{ordername}} {{orderweight}}
+</li>
+
+{{/each}}
+</ol>
+<br><br><br>
+<small>Opret ordrer:</small> 
+
+{{view Ember.TextField class="new-comment" placeholder="Ordrens navn" valueBinding="ordername" }}
+
+{{view Ember.TextField class="new-comment" placeholder="Vægt" valueBinding="orderweight" }} 
+
+
+<button {{action 'createorder'}}>Opret ordre</button>
