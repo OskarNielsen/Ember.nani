@@ -11,6 +11,9 @@ Hej.Router.map(function() {
 
 
   });
+
+  this.resource('terms');
+  this.resource('suprise');
 });
 
 

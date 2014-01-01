@@ -2,7 +2,7 @@
 Hej.OrdersController = Ember.ArrayController.extend({
 
     needs: "customer",
-    customer: Ember.computed.alias("controllers.customer.model"),
+    
 
     ordername: '',
     orderweight: '',
@@ -12,7 +12,8 @@ Hej.OrdersController = Ember.ArrayController.extend({
 
     	createorder: function() {
 
- 		
+ 		var customer = this.get('controllers.customer');
+ 		var orders = this.get('contollers.orders');
 
     	var	ordername = this.get('ordername');
     	var	orderweight = this.get('orderweight');

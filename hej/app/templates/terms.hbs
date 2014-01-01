@@ -1,0 +1,78 @@
+<div class="row">
+	<div class="col-xs-12">
+		<div class="col-xs-12 well">
+<div class="container">
+			{{#if isEditingPrivat}}
+
+			{{partial 'terms/editPrivat'}}
+	
+	<button {{action 'doneEditPrivat'}}>Færdig</button>
+
+			{{else}}
+
+	
+	<h3>Privat købsrettigheder</h3>
+	<br>
+	<div class="col-xs-4">
+	{{termsPrivat}}
+	</div>
+	<br>
+	<button {{action 'editPrivat'}}>Rediger</button>
+			
+			{{/if}}
+</div>
+</div>
+
+<div class="col-xs-12 well">
+<div class="container">	
+{{#if isEditingShop}}
+
+			{{partial 'terms/editShop'}}
+
+	<button {{action 'doneEditShop'}}>Færdig</button>
+
+			{{else}}
+
+	
+	<h3>Butik købsrettigheder</h3>
+	<br>	
+	<div class="col-xs-4">
+	{{termsShop}}
+	</div>
+	<br>
+	<button {{action 'editShop'}}>Rediger</button>
+			
+			{{/if}}
+</div>
+</div>
+
+<div class="col-xs-12 well">
+<div class="container">
+{{#if isEditingClient}}
+
+			{{partial 'terms/editClient'}}
+
+	<button {{action 'doneEditClient'}}>Færdig</button>
+
+			{{else}}
+
+	
+	<h3>Behandler købsrettigheder</h3>
+	<br>
+	<div class="col-xs-4">
+	{{termsClient}}
+	</div>
+	<br>
+	<button {{action 'editClient'}}>Rediger</button>
+			
+			{{/if}}
+</div>
+</div>
+	
+
+
+	
+
+		</div>
+	</div>
+</div>
